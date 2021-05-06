@@ -4,7 +4,6 @@
       class="mx-auto"
       v-if="drawer"
       app
-      absolute
       style="background-color: #0f131e"
       width="auto"
       height="auto"
@@ -18,9 +17,14 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title style="color:white">{{
-              item.title
-            }}</v-list-item-title>
+            <v-list-item-title style="color:white"
+              ><a
+                :href="item.url"
+                target="_blank"
+                style="color: white;text-decoration: none;"
+                >{{ item.title }}</a
+              ></v-list-item-title
+            >
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -84,7 +88,7 @@
           <v-col
             cols="8"
             style="min-width: 100px; max-width: 100%;margin-left:20px;margin-right:20px;"
-            class="flex-grow-1 flex-shrink-1"
+            class="flex-grow-1 flex-shrink-0"
           >
             <v-card
               class="mx-auto"
@@ -130,7 +134,7 @@
         </v-row>
         <v-row dense>
           <v-col
-            cols="3"
+            cols="6"
             style="min-width: 100px; max-width: 100%;margin-top: 30px;"
             class="flex-grow-1 flex-shrink-0"
           >
@@ -144,25 +148,26 @@
               </v-card-title>
               <hr />
               <v-card-subtitle
-                style="line-height: 1.7;font-size: 15px;color:white"
+                style="line-height: 1.7;font-size: 16px;color:white"
               >
                 - Выкуп с торгов недвижимости банкротов по выгодной цене<br />-
                 Эффективные сделки на Московской бирже и валютном рынке<br />-
                 Строительный бизнес<br />- Развитие стартапов<br /><br />Доходность
-                компании составляет 3-5 % в день.<br />Из полученных денег почти
-                треть идет на выплату партнерам, то есть НАМ!<br />Остальное
+                компании составляет<br />3-5 % в день.<br />Из полученных денег
+                почти треть идет на выплату партнерам, то есть НАМ!<br />Остальное
                 тратят на хозяйственные нужды, зарплату сотрудникам компании и
                 формирование резерва.
               </v-card-subtitle>
             </v-card>
           </v-col>
           <v-col
-            cols="9"
-            style="min-width: 100px; max-width: 100%;margin-top: 30px;"
+            cols="5"
+            style="min-width: 100px; max-width: 100%;margin-top: 30px;margin-left:20px;margin-right:20px;"
             class="flex-grow-1 flex-shrink-0"
           >
             <v-carousel
               cycle
+              style="box-shadow: 0 0 10px rgb(0 0 0);border-radius: 5px;"
               height="auto"
               hide-delimiter-background
               show-arrows-on-hover
@@ -172,7 +177,9 @@
                   <img
                     :lazy-src="slide.src"
                     :src="slide.src"
-                    style="width:auto;height:610px;"
+                    style="margin-bottom: -7px;"
+                    width="100%"
+                    heigth="100%"
                     :alt="slide.src"
                   />
                 </center>
@@ -192,8 +199,8 @@
             >
               <v-card-subtitle
                 style="color:white;
-                font-size:15px;
-                line-height:1.7;"
+                font-size:16px;
+                line-height:1.8;"
               >
                 Масштабность и успех закрытого инвестиционного клуба Frendex
                 видна в открытии офисов и получении автомобилей. Также
@@ -213,20 +220,20 @@
 
         <v-row dense>
           <v-col
-            cols="6"
-            style="min-width: 100px; max-width: 100%;margin-top: 30px;"
+            cols="5"
+            style="min-width: 100px; max-width: 100%;margin-top: 30px;margin-right:10px;"
             class="flex-grow-1 flex-shrink-0"
           >
             <v-card
               class="mx-auto"
               style="background-color: #151821;color:white;box-shadow: 0 0 10px rgb(0 0 0);"
             >
-              <v-img :src="require('@/assets/auto.png')" height="400px"></v-img>
+              <v-img :src="require('@/assets/auto.png')" height="auto"></v-img>
             </v-card>
           </v-col>
           <v-col
             cols="6"
-            style="min-width: 100px; max-width: 100%;margin-top: 30px;"
+            style="min-width: 200px; max-width: 100%;margin-top: 30px;margin-left:10px;"
             class="flex-grow-1 flex-shrink-0"
           >
             <v-card
@@ -248,8 +255,64 @@
             </v-card>
           </v-col>
         </v-row>
+        <v-row dense style="margin-top:30px;margin-bottom:30px;">
+          <v-col
+            cols="12"
+            style="min-width: 100px; max-width: 100%;"
+            class="flex-grow-1 flex-shrink-0"
+          >
+            <v-card
+              class="mx-auto"
+              style="background-color: #151821;color:white;box-shadow: 0 0 10px rgb(0 0 0);"
+            >
+              <v-img :src="require('@/assets/result.png')"></v-img>
+
+              <v-card-title>
+                Мое личное мнение, в проект Френдекс можно вложиться смело.
+              </v-card-title>
+
+              <v-card-subtitle
+                style="color:white;font-size: 18px;line-height: 2;"
+              >
+                По всем признакам она еще проживет достаточно долго. Мой
+                результат на скрине с личного кабинета.<br />
+                <b>Для начала я вложил 4000 долларов.</b><br />
+                <v-btn
+                  class=""
+                  :loading="loading2"
+                  :disabled="loading2"
+                  style="max-width: 100%;"
+                  color="success"
+                  href="https://frendex.org/I/7805659"
+                  target="_blank"
+                  @click="loader = 'loading2'"
+                >
+                  РЕГИСТРАЦИЯ ФРЕНДЕКС
+                  <template v-slot:loader>
+                    <span style="color: grey;">Переход...</span>
+                  </template>
+                </v-btn>
+              </v-card-subtitle>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-container>
     </v-sheet>
+    <v-footer padless style="background-color: #0f131e">
+      <v-divider></v-divider>
+      <!-- <v-col class="text-center" cols="12"> -->
+      <v-card-text class="py-2 white--text text-center">
+        <strong style="text-decoration: none;">
+          <a
+            href="https://frendex.org/I/7805659"
+            target="_blank"
+            style="color: white;text-decoration: none;font-size: 18px;"
+            >FrendeX</a
+          >
+          {{ new Date().getFullYear() }}</strong
+        >
+      </v-card-text>
+    </v-footer>
   </v-app>
 </template>
 
@@ -259,9 +322,16 @@ export default {
   data() {
     return {
       items: [
-        { title: "Telegram", icon: "mdi-view-dashboard" },
-        { title: "WhatsApp", icon: "mdi-account-box" },
-        { title: "Vk", icon: "mdi-gavel" }
+        {
+          title: "Мой telegram",
+          icon: "mdi-telegram",
+          url: "https://t.me/ainur134dd"
+        },
+        {
+          title: "Регистрация Френдекс",
+          icon: "mdi-view-dashboard",
+          url: "https://frendex.org/I/7805659"
+        }
       ],
       drawer: false,
       // tab: null,
@@ -270,8 +340,20 @@ export default {
         { src: require("@/assets/slide.png") },
         { src: require("@/assets/slide1.png") },
         { src: require("@/assets/slide2.png") }
-      ]
+      ],
+      loader: null,
+      loading2: false
     };
+  },
+  watch: {
+    loader() {
+      const l = this.loader;
+      this[l] = !this[l];
+
+      setTimeout(() => (this[l] = false), 1500);
+
+      this.loader = null;
+    }
   }
 };
 </script>
@@ -287,7 +369,7 @@ export default {
   color: #15172e;
 }
 img {
-  box-shadow: 0 0 10px rgb(0 0 0);
-  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgb(0 0 0);
+  border-radius: 10px; */
 }
 </style>
