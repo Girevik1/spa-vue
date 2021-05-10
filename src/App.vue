@@ -255,10 +255,42 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-row dense style="margin-top:30px;margin-bottom:30px;">
+
+        <v-row dense class="mb-5">
           <v-col
-            cols="12"
-            style="min-width: 100px; max-width: 100%;"
+            cols="5"
+            style="min-width: 100px; max-width: 100%;margin-top: 30px;margin-right:10px;"
+            class="flex-grow-1 flex-shrink-0"
+          >
+            <v-card
+              class="mx-auto"
+              style="background-color: #151821;color:white;box-shadow: 0 0 10px rgb(0 0 0);"
+            >
+              <v-carousel
+                cycle
+                style="box-shadow: 0 0 10px rgb(0 0 0);border-radius: 5px;"
+                height="auto"
+                hide-delimiter-background
+                show-arrows-on-hover
+              >
+                <v-carousel-item v-for="(slide, i) in slides2" :key="i">
+                  <center>
+                    <img
+                      :lazy-src="slide.src"
+                      :src="slide.src"
+                      style="margin-bottom: -7px;"
+                      width="100%"
+                      heigth="100%"
+                      :alt="slide.src"
+                    />
+                  </center>
+                </v-carousel-item>
+              </v-carousel>
+            </v-card>
+          </v-col>
+          <v-col
+            cols="6"
+            style="min-width: 200px; max-width: 100%;margin-top: 30px;margin-left:10px;"
             class="flex-grow-1 flex-shrink-0"
           >
             <v-card
@@ -266,18 +298,25 @@
               style="background-color: #151821;color:white;box-shadow: 0 0 10px rgb(0 0 0);"
             >
               <v-img :src="require('@/assets/result.png')"></v-img>
-
-              <v-card-title>
+              <v-card-title style="word-break: break-word;">
                 Мое личное мнение, в проект Френдекс можно вложиться смело.
               </v-card-title>
 
               <v-card-subtitle
                 style="color:white;font-size: 18px;line-height: 2;"
               >
-                По всем признакам она еще проживет достаточно долго. Мой
+                По всем признакам проект проживет еще достаточно долго. Мой
                 результат на скрине с личного кабинета.<br />
-                <b>Для начала я вложил 4000 долларов.</b><br />
+                <b>Для начала я вложил 4000 долларов.</b>
+
+                <br /><br />
+                Регистрируясь в френдекс по ссылке вы получаете : <br />- Полное
+                сопровождение на всех этапах сотрудничества! <br />- Помощь в
+                решении любого вопроса по проекту. <br />Всегда нужно помнить о
+                рисках. Инвестиции это риски! Инвестируйте свободные
+                средства!<br /><br />
                 <v-btn
+                  width="100%"
                   class=""
                   :loading="loading2"
                   :disabled="loading2"
@@ -329,16 +368,19 @@ export default {
         {
           title: "Регистрация Френдекс",
           icon: "mdi-view-dashboard",
-          url: "https://frendex.org/I/7805659"
+          url: "https://frendex.ltd/I/7805659"
         }
       ],
       drawer: false,
-      // tab: null,
-      // itemsTab: ["Главная страница", "О компании"],
+
       slides: [
         { src: require("@/assets/slide.png") },
         { src: require("@/assets/slide1.png") },
         { src: require("@/assets/slide2.png") }
+      ],
+      slides2: [
+        { src: require("@/assets/result2.png") },
+        { src: require("@/assets/result3.png") }
       ],
       loader: null,
       loading2: false
@@ -366,9 +408,5 @@ export default {
 }
 .bar {
   color: #15172e;
-}
-img {
-  /* box-shadow: 0 0 10px rgb(0 0 0);
-  border-radius: 10px; */
 }
 </style>
