@@ -1,21 +1,7 @@
 # spa-vue
 
-> vue dashboard for frendex
+*Quick a vue spa special for my friend from the Frendex company*
 
-## Build Setup
+**You can see what hapened at my-vue-spa-5532f.firebaseapp.com**
 
-``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
