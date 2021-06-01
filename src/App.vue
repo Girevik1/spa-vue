@@ -322,7 +322,7 @@
                   :disabled="loading2"
                   style="max-width: 100%;"
                   color="success"
-                  href="https://frendex.org/I/7805659"
+                  href="https://frendex.ltd/I/7805659"
                   target="_blank"
                   @click="loader = 'loading2'"
                 >
