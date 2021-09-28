@@ -73,7 +73,7 @@
               ></v-img>
 
               <v-card-title>
-                Меня зовут Айнур
+                Меня зовут Михаил
               </v-card-title>
 
               <v-card-subtitle
@@ -363,12 +363,12 @@ export default {
         {
           title: "Мой telegram",
           icon: "mdi-telegram",
-          url: "https://t.me/ainur134dd"
+          url: "https://t.me/mihail1134dd"
         },
         {
           title: "Регистрация Френдекс",
           icon: "mdi-view-dashboard",
-          url: "https://frendex.ltd/I/7805659"
+          url: "https://frendex.ltd/I/72805659"
         }
       ],
       drawer: false,
